@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+<div class="relative isolate overflow-hidden bg-white-900 py-24 sm:py-32">
+  <div class="absolute inset-0 bg-gradient-to-tr from-white to-[#776fff] opacity-20"></div>
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-black">
+    <div class="w-full lg:mx-0">
+      <div class="flex items-center text-sm">
+        <img class="mr-4 w-16 h-16 rounded-full" src="/media/sg.jpeg" alt="Dr. Shivank Gautam(PhD)" />
+        <div>
+          <a href="#" rel="author" class="text-xl font-bold">Dr. Shivank Gautam(PhD)</a>
+          <p class="text-base"><span class="text-pink-900">Senior Backend Engineer, Educator</span></p>
+        </div>
+      </div>
+
+      <h2 class="my-8 font-bold font-sans tracking-tight text-5xl">
+        How One <span class="text-pink-900">goto</span> Broke the Internet
+      </h2>
+
+      <p class="mt-6 text-lg leading-8">
+        In 2014, Apple had a major security bug in their SSL implementation because of one extra line:
+      </p>
+
+      <pre class="mt-6 ml-4 bg-gray-100 p-4 rounded-lg text-sm leading-6 overflow-x-auto font-mono text-black whitespace-pre">
+if ((err = SSLHashSHA1.update(&amp;hashCtx, &amp;signedParams)) != 0)
+    goto fail;
+    goto fail; // &lt;- This line always runs!
+if ((err = SSLHashSHA1.final(&amp;hashCtx, &amp;hashOut)) != 0)
+    goto fail;
+      </pre>
+
+      <p class="mt-6 text-lg leading-8">
+        That second <code class="font-mono">goto fail;</code> was not inside an <code class="font-mono">if</code> condition. So it always ran and skipped the final certificate check — basically saying any site was valid, even fake ones.
+      </p>
+
+      <div class="mt-8">
+        <img
+          class="rounded-xl border shadow-md"
+          src="https://undraw.co/api/illustrations/69012b85-ecae-48db-a236-f4908bc0f30b"
+          alt="MITM Attack Illustration"
+        />
+      </div>
+
+      <h3 class="mt-12 text-2xl font-bold text-pink-900">How could someone exploit this?</h3>
+      <p class="mt-4 text-lg leading-8">
+        Imagine you're on café Wi-Fi. An attacker creates a fake hotspot and pretends to be <strong>yourbank.com</strong>. Your phone thinks it's secure, but it’s not. That’s a <strong>man-in-the-middle</strong> attack — and this bug made it easy.
+      </p>
+
+      <h3 class="mt-12 text-2xl font-bold text-pink-900">Could this have been prevented?</h3>
+      <p class="mt-4 text-lg leading-8">
+        Yes. A simple test like:
+        <pre class="mt-2 bg-gray-100 p-3 rounded-md text-sm font-mono text-black whitespace-pre overflow-x-auto">
+assert validate_ssl(fake_cert) == False
+        </pre>
+        would likely have caught it. But there was no test — and millions were left exposed.
+      </p>
+
+      <p class="mt-6 text-lg leading-8 font-semibold text-black">
+        ⚠️ Even one line of code can break trust. Write tests. Always.
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
