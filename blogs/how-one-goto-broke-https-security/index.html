@@ -39,13 +39,13 @@ if ((err = SSLHashSHA1.final(&amp;hashCtx, &amp;hashOut)) != 0)
         That second <code class="font-mono">goto fail;</code> was not inside an <code class="font-mono">if</code> condition. So it always ran and skipped the final certificate check — basically saying any site was valid, even fake ones.
       </p>
 
-      <div class="mt-8">
-        <img
-          class="rounded-xl border shadow-md"
-          src="https://undraw.co/api/illustrations/69012b85-ecae-48db-a236-f4908bc0f30b"
-          alt="MITM Attack Illustration"
-        />
-      </div>
+    <div class="mt-8">
+      <img
+        class="rounded-md border shadow-md w-full max-w-md mx-auto"
+        src="/media/mitm.png"
+        alt="MITM Attack Illustration"
+      />
+    </div>
 
       <h3 class="mt-12 text-2xl font-bold text-pink-900">How could someone exploit this?</h3>
       <p class="mt-4 text-lg leading-8">
