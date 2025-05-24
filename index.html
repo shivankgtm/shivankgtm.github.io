@@ -1,33 +1,35 @@
 <!doctype html>
-<html>
+<html class="h-full">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<div class="relative isolate overflow-hidden bg-white-900 py-24 sm:py-32">
-  <div class="absolute inset-0 bg-gradient-to-tr from-white to-[#776fff] opacity-20"></div>
+<body class="h-full bg-gray-100">
+  <div class="flex flex-col min-h-screen">
+    <div class="relative isolate overflow-hidden bg-white-900 py-24 sm:py-32 flex-grow">
+      <div class="absolute inset-0 bg-gradient-to-tr from-white to-[#776fff] opacity-20"></div>
 
-  <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row lg:justify-between">
-          <div class="max-w-2xl">
-              <h2 class="font-bold font-sans tracking-tight text-6xl"><span class="text-pink-900">Explore</span> Our Tech Blogs</h2>
-              <p class="mt-6 text-lg leading-8 text-black">Dive into insightful articles and tutorials on the latest in technology and software development.</p>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="flex flex-col lg:flex-row lg:justify-between">
+              <div class="max-w-2xl">
+                  <h2 class="font-bold font-sans tracking-tight text-6xl"><span class="text-pink-900">Explore</span> Our Tech Blogs</h2>
+                  <p class="mt-6 text-lg leading-8 text-black">Dive into insightful articles and tutorials on the latest in technology and software development.</p>
+              </div>
+              <div class="max-w-2xl lg:ml-8 mt-2">
+                <div class="flex items-center">
+                  
+                </div>
+              </div>
+      </div>
+        <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+          <div class="grid grid-cols-1 gap-x-8 gap-y-6 font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+           
+            <a href="/blogs/" class="text-2xl font-bold text-pink-900 hover:text-pink-700 focus:text-pink-700 z-10">Tech Blogs</a>
           </div>
-          <div class="max-w-2xl lg:ml-8 mt-2">
-            <div class="flex items-center">
-              
-
-          </div>
-          </div>
-  </div>
-    <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-      <div class="grid grid-cols-1 gap-x-8 gap-y-6 font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-        <!-- <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
-        <a href="#">Internship program <span aria-hidden="true">&rarr;</span></a> -->
-        <a href="/blogs/" class="text-2xl font-bold text-pink-900 hover:text-pink-700 focus:text-pink-700 z-10">Tech Blogs</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</body>
 </html>
