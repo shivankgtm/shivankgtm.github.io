@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+  <div class="relative isolate overflow-hidden bg-white-900 py-24 sm:py-32">
+    <div class="absolute inset-0 bg-gradient-to-tr from-white to-[#776fff] opacity-20"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 text-black">
+      <div class="w-full lg:mx-0">
+        <div class="flex items-center text-sm">
+          <img class="mr-4 w-16 h-16 rounded-full" src="/media/sg.jpeg" alt="Shivank Gautam" />
+          <div>
+            <a href="#" rel="author" class="text-xl font-bold">Shivank Gautam</a>
+            <p class="text-base"><span class="text-pink-900">Senior Backend Engineer, Educator</span></p>
+          </div>
+        </div>
+
+        <h2 class="my-8 font-bold font-sans tracking-tight text-5xl">
+          Consensus in Distributed Systems
+        </h2>
+
+        <p class="mt-6 text-lg leading-8">
+          Consensus is like a group of friends deciding where to eat. Everyone must agree on one place (e.g., pizza), even if some friends are late or disagree.
+          In distributed systems, nodes use consensus to agree on things like:
+        </p>
+
+        <ul class="mt-6 ml-4 list-disc text-lg leading-8 space-y-2">
+          <li>The order of transactions (e.g., in Bitcoin, who spent what first).</li>
+          <li>The current state of data.</li>
+        </ul>
+
+        <h3 class="mt-12 text-2xl font-bold text-pink-900">Why is it Tricky?</h3>
+
+        <ul class="mt-4 ml-4 list-disc text-lg leading-8 space-y-2">
+          <li>Nodes might crash (like your library node failing).</li>
+          <li>Networks can delay or lose messages.</li>
+          <li>Some nodes might act maliciously (Byzantine faults, like lying about data).</li>
+          <li>The CAP theorem makes it hard to balance consistency, availability, and partition tolerance.</li>
+        </ul>
+
+        <h3 class="mt-12 text-2xl font-bold text-pink-900">Common Consensus Mechanisms (Super Basic) 📚</h3>
+
+        <!-- Paxos -->
+        <h4 class="mt-8 text-xl font-bold">Paxos:</h4>
+        <ul class="mt-2 ml-4 list-disc text-lg leading-8 space-y-2">
+          <li>A protocol where nodes vote to agree on a value (like choosing a leader or a transaction).</li>
+          <li><strong>Example:</strong> Used in Google’s databases to ensure all servers agree on data updates.</li>
+          <li><strong>Vibe:</strong> Like a class election—everyone votes, and the majority wins.</li>
+          <li><strong>Pros:</strong> Handles node failures well.</li>
+          <li><strong>Cons:</strong> Complex and slow for large systems.</li>
+        </ul>
+
+        <!-- Raft -->
+        <h4 class="mt-8 text-xl font-bold">Raft:</h4>
+        <ul class="mt-2 ml-4 list-disc text-lg leading-8 space-y-2">
+          <li>A simpler version of Paxos, where one node is the “leader” and others follow.</li>
+          <li><strong>Example:</strong> Used in systems like etcd (a distributed key-value store).</li>
+          <li><strong>Vibe:</strong> Like one friend leading the group to decide on pizza, others follow.</li>
+          <li><strong>Pros:</strong> Easier to understand and implement.</li>
+          <li><strong>Cons:</strong> If the leader fails, a new one must be elected.</li>
+        </ul>
+
+        <!-- PoW -->
+        <h4 class="mt-8 text-xl font-bold">Proof of Work (PoW):</h4>
+        <ul class="mt-2 ml-4 list-disc text-lg leading-8 space-y-2">
+          <li>Nodes compete to solve a hard math problem to propose the next state (like adding a block in Bitcoin).</li>
+          <li><strong>Example:</strong> Bitcoin uses PoW to agree on transactions.</li>
+          <li><strong>Vibe:</strong> Like a race where the winner gets to decide the next step.</li>
+          <li><strong>Pros:</strong> Secure against malicious nodes.</li>
+          <li><strong>Cons:</strong> Slow and uses lots of energy.</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
