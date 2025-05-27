@@ -1,0 +1,50 @@
+/* css/theme.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .theme-gradient-background {
+    @apply absolute inset-0 bg-gradient-to-tr from-white to-[#776fff] opacity-20;
+  }
+
+  /* Define a container for the gradient to ensure proper positioning */
+  .theme-gradient-container {
+    @apply relative isolate overflow-hidden;
+  }
+
+  /* Primary accent text color */
+  .theme-accent-text {
+    @apply text-pink-900;
+  }
+  .theme-accent-text-hover {
+    @apply hover:text-pink-700 focus:text-pink-700;
+  }
+
+  /* Consider if bg-white-900 was intentional or a typo for bg-white.
+     For now, let's assume it might be a custom color or a very light gray if not white.
+     If it's just white, this specific class for it might not be needed if bg-white is used directly.
+     Let's create a placeholder for it in case it's a specific shade.
+     If index.html's "bg-white-900" should just be "bg-white", this can be removed later.
+  */
+  .theme-main-content-bg {
+    /* Defaulting to bg-white as bg-white-900 is unusual unless custom defined.
+       If it's truly custom, the actual color value would be needed.
+       For the gradient to work as `from-white`, this container should ideally be white.
+    */
+    @apply bg-white;
+  }
+}
+
+/* Styles for overall page structure if needed, e.g., ensuring body takes full height */
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #f3f4f6; /* This is bg-gray-100 */
+  /* The flex layout for min-h-screen is better handled directly in the HTML structure
+     with Tailwind classes (like in index.html) rather than a global body style here,
+     to allow flexibility per page.
+  */
+}
